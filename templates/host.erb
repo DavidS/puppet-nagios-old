@@ -4,12 +4,12 @@ define host{
 	host_name               <%= name %>
 	alias                   <%= short_alias %>
 	address                 <%= ip %>
-	<% if ! (/^(none|)$/i =~ nagios_parent) then -%>
+<% if ! (/^(none|)$/i =~ nagios_parent) then -%>
 	parents <%= nagios_parent %>
-	<% end -%>
-	<% if ! (/^(none|)$/i =~ nagios_contacts) then -%>
+<% end -%>
+<% if ! (/^(none|)$/i =~ nagios_contacts) then -%>
 	contacts <%= nagios_contacts %>
-	<% end -%>
+<% end -%>
 }
 
 
