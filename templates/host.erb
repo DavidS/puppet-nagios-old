@@ -5,6 +5,7 @@ define host{
 	alias                   <%= short_alias %>
 	address                 <%= ip %>
 	<% if ! (/^(none|)$/i =~ nagios_parent) then %> parents <%= nagios_parent %> <% end %>
+	<% if ! (/^(none|)$/i =~ nagios_contact) then %> contacts <%= nagios_contact %> <% end %>
 }
 
 
