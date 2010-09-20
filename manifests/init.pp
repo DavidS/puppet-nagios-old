@@ -112,6 +112,8 @@ class nagios {
 		# from apache2.pp
 		http_port:
 			command_line => '/usr/lib/nagios/plugins/check_http -p $ARG1$ -H $HOSTADDRESS$ -I $HOSTADDRESS$';
+		https_port:
+			command_line => '/usr/lib/nagios/plugins/check_http --ssl -p $ARG1$ -H $HOSTADDRESS$ -I $HOSTADDRESS$';
 		# from bind.pp
 		nameserver: command_line => '/usr/lib/nagios/plugins/check_dns -H www.edv-bus.at -s $HOSTADDRESS$';
 		# TODO: debug this, produces copious false positives:
