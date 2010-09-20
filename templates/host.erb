@@ -8,7 +8,7 @@ define host{
 	parents <%= nagios_parent %>
 	<% end -%>
 	<% if ! (/^(none|)$/i =~ nagios_contacts) then -%>
-	contacts <%= nagios_contact %>
+	contacts <%= nagios_contacts %>
 	<% end -%>
 }
 
