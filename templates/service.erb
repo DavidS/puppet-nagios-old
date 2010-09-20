@@ -3,5 +3,8 @@ define service {
 	service_description	<%= name %>
 	check_command <%= real_check_command %>
 	use	generic-service
+<% if ! (/^(none|)$/i =~ nagios_contacts) then -%>
+	contacts <%= nagios_contacts %>
+<% end -%>
 }
 
